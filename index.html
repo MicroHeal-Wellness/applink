@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>heal O gut</title>
+    <script>
+        function redirect() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Android detection
+            if (/android/i.test(userAgent)) {
+                window.location.href = "https://play.google.com/store/apps/details?id=com.winhealtah.healogutd";
+            }
+            // iOS detection
+            else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = "https://apps.apple.com/app/id6468660817";
+            }
+            // Other platforms
+            else {
+                var androidLink = "https://play.google.com/store/apps/details?id=com.winhealtah.healogut";
+                var iosLink = "https://apps.apple.com/app/id6468660817";
+                document.getElementById("androidLink").href = androidLink;
+                document.getElementById("iosLink").href = iosLink;
+                document.getElementById("androidLink").innerText = "Android App";
+                document.getElementById("iosLink").innerText = "iOS App";
+            }
+        }
+    </script>
+</head>
+<body onload="redirect()">
+    <p>If the app does not automatically open, please click one of the links below:</p>
+    <ul>
+        <li><a id="androidLink" target="_blank">Android App</a></li>
+        <li><a id="iosLink" target="_blank">iOS App</a></li>
+    </ul>
+</body>
+</html>
